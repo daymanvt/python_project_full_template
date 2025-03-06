@@ -1,5 +1,0 @@
-{
-    "pylint.interpreter": [
-        "/home/kmc/repo/hub.python-template-full/.venv/bin/python"
-    ]
-}

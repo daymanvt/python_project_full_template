@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 .pytest_cache/
 .mypy_cache/
-.vscode/
+
 .ruff_cache/
 
 # C extensions
@@ -100,3 +100,4 @@ cover/
 
 # Custom
 .devbox/
+.vscode/
