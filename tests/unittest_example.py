@@ -6,22 +6,22 @@ This example provides an alternative to pytest for unit testing.
 
 import unittest
 
-# Import functions from mypackage1
-from mypackage1.module1 import (
+# Import functions from textkit
+from textkit.analyzer import (
     average_word_length,
     sentence_count,
     word_frequency,
 )
-from mypackage1.module2 import replace_all, slugify, truncate
+from textkit.transformer import replace_all, slugify, truncate
 
-# Import functions from mypackage2
-from mypackage2.module1 import is_date, is_email, is_url
-from mypackage2.module2 import to_camel_case, to_snake_case
-from mypackage2.subpackage.module3 import Field, Schema
+# Import functions from dataval
+from dataval.validators import is_date, is_email, is_url
+from dataval.transformers import to_camel_case, to_snake_case
+from dataval.validation.schema import Field, Schema
 
 
-class TestMyPackage1(unittest.TestCase):
-    """Test cases for mypackage1 using unittest."""
+class TestTextkit(unittest.TestCase):
+    """Test cases for textkit using unittest."""
 
     def setUp(self):
         """Set up test fixtures."""
@@ -73,8 +73,8 @@ class TestMyPackage1(unittest.TestCase):
         self.assertEqual(result, "Hi world. This is a test. Python is awesome!")
 
 
-class TestMyPackage2(unittest.TestCase):
-    """Test cases for mypackage2 using unittest."""
+class TestDataval(unittest.TestCase):
+    """Test cases for dataval using unittest."""
 
     def test_validators(self):
         """Test validator functions."""

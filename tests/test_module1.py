@@ -1,12 +1,12 @@
 """Tests for text utilities and data validators."""
 
-from mypackage1.module1 import (
+from textkit.analyzer import (
     average_word_length,
     get_top_words,
     sentence_count,
     word_frequency,
 )
-from mypackage2.module1 import (
+from dataval.validators import (
     is_date,
     is_email,
     is_number_in_range,
@@ -14,7 +14,7 @@ from mypackage2.module1 import (
 )
 
 
-# mypackage1.module1 tests
+# textkit.analyzer tests
 class TestTextAnalysis:
     """Test suite for text analysis functions."""
 
@@ -45,7 +45,7 @@ class TestTextAnalysis:
         assert sentence_count(empty_text) == 0
 
 
-# mypackage2.module1 tests
+# dataval.validators tests
 class TestValidators:
     """Test suite for data validators."""
 

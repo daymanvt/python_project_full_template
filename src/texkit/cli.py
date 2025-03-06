@@ -6,8 +6,8 @@ import click  # type: ignore[import-not-found]
 from rich.console import Console  # type: ignore[import-not-found]
 from rich.table import Table  # type: ignore[import-not-found]
 
-from mypackage1 import module1, module2
-from mypackage1.subpackage import module3
+from texkit import analyzer, transformer
+from texkit.advanced import summarizer
 
 console = Console()
 
@@ -44,15 +44,15 @@ def analyze(text: str | None, file: click.File | None, top: int) -> None:
     word_count = len(content.split())
     table.add_row("Word Count", str(word_count))
     table.add_row("Character Count", str(len(content)))
-    table.add_row("Sentence Count", str(module1.sentence_count(content)))
+    table.add_row("Sentence Count", str(analyzer.sentence_count(content)))
     table.add_row(
-        "Average Word Length", f"{module1.average_word_length(content):.2f}"
+        "Average Word Length", f"{analyzer.average_word_length(content):.2f}"
     )
 
     # Show top words
     console.print(table)
 
-    top_words = module1.get_top_words(content, n=top)
+    top_words = analyzer.get_top_words(content, n=top)
     if top_words:
         word_table = Table(title=f"Top {top} Words")
         word_table.add_column("Word", style="blue")
@@ -90,10 +90,10 @@ def transform(
     result = content
 
     if slugify:
-        result = module2.slugify(result)
+        result = transformer.slugify(result)
 
     if truncate:
-        result = module2.truncate(result, length=truncate)
+        result = transformer.truncate(result, length=truncate)
 
     console.print(result)
 
@@ -117,8 +117,8 @@ def summarize(
         console.print("[bold red]Error:[/] No text provided")
         return
 
-    summary = module3.summarize(content, sentence_count=sentences)
-    readability = module3.calculate_readability(content)
+    summary = summarizer.summarize(content, sentence_count=sentences)
+    readability = summarizer.calculate_readability(content)
 
     console.print("[bold green]Summary:[/]")
     console.print(summary)

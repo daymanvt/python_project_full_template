@@ -17,16 +17,16 @@ uvx ruff format .  # Format code with ruff
 # Linting
 uvx ruff check .  # Run ruff linter
 uvx ruff check --fix .  # Run ruff with auto-fix
-uvx pylint src/mypackage1 src/mypackage2  # Run pylint
+uvx pylint src/textkit src/dataval  # Run pylint
 
 # Type Checking
-uvx mypy src/mypackage1 src/mypackage2  # Run type checking
+uvx mypy src/textkit src/dataval  # Run type checking
 
 # Testing
 pytest  # Run all tests with pytest
-pytest tests/test_module1.py  # Run specific test file
+pytest tests/test_analyzer.py  # Run specific test file
 pytest -xvs  # Run with verbose output and stop on first failure
-python -m unittest tests/unittest_example.py  # Run unittest tests
+python -m unittest tests/unittest_analyzer.py  # Run unittest tests
 
 
 # Run the main demo

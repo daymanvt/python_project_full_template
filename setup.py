@@ -32,7 +32,7 @@ setup(
     python_requires=">=3.13",
     entry_points={
         "console_scripts": [
-            "textutils=mypackage1.cli:main",
+            "textutils=textkit.cli:main",
         ],
     },
     classifiers=[

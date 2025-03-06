@@ -3,8 +3,8 @@
 Demo application entry point.
 
 This script demonstrates both packages:
-- mypackage1: CLI text utilities
-- mypackage2: Data validation library
+- textkit: CLI text utilities
+- dataval: Data validation library
 """
 
 import argparse
@@ -12,15 +12,15 @@ import argparse
 from rich.console import Console
 from rich.panel import Panel
 
-import mypackage1.module1 as text_analysis
-import mypackage1.module2 as text_transform
-import mypackage2.module1 as validators
-import mypackage2.module2 as transformers
-from mypackage2.subpackage.module3 import Field, Schema
+import textkit.analyzer as text_analysis
+import textkit.transformer as text_transform
+import dataval.validators as validators
+import dataval.transformers as transformers
+from dataval.validation.schema import Field, Schema
 
 
 def demo_text_utils(sample_text: str) -> None:
-    """Demonstrate text utilities from mypackage1."""
+    """Demonstrate text utilities from textkit."""
     console = Console()
 
     console.print(
@@ -58,7 +58,7 @@ def demo_text_utils(sample_text: str) -> None:
 
 
 def demo_data_validation() -> None:
-    """Demonstrate data validation from mypackage2."""
+    """Demonstrate data validation from dataval."""
     console = Console()
 
     console.print(

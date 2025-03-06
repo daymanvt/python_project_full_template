@@ -2,17 +2,22 @@
 
 import pytest
 
-from mypackage1.module2 import extract_emails, replace_all, slugify, truncate
-from mypackage2.module2 import (
+from textkit.transformer import (
+    extract_emails,
+    replace_all,
+    slugify,
+    truncate,
+)
+from dataval.transformers import (
     format_date,
     to_camel_case,
     to_snake_case,
     to_title_case,
 )
-from mypackage2.subpackage.module3 import Field, Schema
+from dataval.validation.schema import Field, Schema
 
 
-# mypackage1.module2 tests
+# textkit.transformer tests
 class TestTextTransformations:
     """Test suite for text transformation functions."""
 
@@ -42,7 +47,7 @@ class TestTextTransformations:
         assert len(emails) == 2
 
 
-# mypackage2.module2 tests
+# dataval.transformers tests
 class TestDataTransformers:
     """Test suite for data transformation functions."""
 
@@ -72,7 +77,7 @@ class TestDataTransformers:
             format_date("invalid-date")
 
 
-# mypackage2.subpackage.module3 tests
+# dataval.validation.schema tests
 class TestSchema:
     """Test suite for schema validation."""
 

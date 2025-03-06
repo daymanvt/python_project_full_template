@@ -7,7 +7,7 @@ ignore = []
 
 [lint.per-file-ignores]
 "tests/*" = ["S101", "ANN201", "ANN001", "ANN101"]
-"src/mypackage1/cli.py" = ["ARG001"]
+"src/texkit/cli.py" = ["ARG001"]
 
 [lint.isort]
-known-first-party = ["mypackage1", "mypackage2"]
+known-first-party = ["textkit", "dataval"]

@@ -7,13 +7,13 @@ This example demonstrates an interactive shell for the delta-313 package.
 import cmd
 import shlex
 
-from mypackage1.module1 import (
+from textkit.analyzer import (
     average_word_length,
     get_top_words,
 )
-from mypackage1.module2 import extract_emails, slugify, truncate
-from mypackage2.module1 import is_date, is_email, is_url
-from mypackage2.module2 import to_camel_case, to_snake_case, to_title_case
+from textkit.transformer import extract_emails, slugify, truncate
+from dataval.validators import is_date, is_email, is_url
+from dataval.transformers import to_camel_case, to_snake_case, to_title_case
 
 
 class Delta313Shell(cmd.Cmd):
